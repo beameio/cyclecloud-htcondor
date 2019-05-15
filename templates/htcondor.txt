@@ -161,7 +161,7 @@ Order = 20
 
         [[[parameter configuration_htcondor_flock_from]]]
         label = "Flock From"
-        defaultvalue = "13.80.177.197", "172.16.0.6"
+        defaultvalue = 13.80.177.197, 172.16.0.6
 
     [[parameters Software]]
     Description = "Specify the scheduling software, and base OS installed on all nodes, and optionally the cluster-init and chef versions from your Locker."
