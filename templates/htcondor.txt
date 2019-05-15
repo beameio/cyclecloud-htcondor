@@ -3,7 +3,7 @@
 ## Cluster Configuration File ##
 ################################
 
-[cluster HTCondor]
+[cluster HTCondor-Flocking]
 FormLayout = selectionpanel
 Category = Schedulers
 
@@ -18,6 +18,9 @@ Autoscale = $Autoscale
     
         [[[configuration]]]
         htcondor.version = $configuration_htcondor_version
+
+        [[[configuration]]]
+        htcondor.flock_from = $configuration_htcondor_flock_from
 
         [[[cluster-init htcondor:default]]]
         Optional = true
@@ -156,6 +159,9 @@ Order = 20
         label = "HTCondor Version"
         defaultvalue = 8.6.13
 
+        [[[parameter configuration_htcondor_flock_from]]]
+        label = "Flock From"
+        defaultvalue = "13.80.177.197", "172.16.0.6"
 
     [[parameters Software]]
     Description = "Specify the scheduling software, and base OS installed on all nodes, and optionally the cluster-init and chef versions from your Locker."
