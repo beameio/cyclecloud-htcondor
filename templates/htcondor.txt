@@ -22,6 +22,9 @@ Autoscale = $Autoscale
         [[[configuration]]]
         htcondor.flock_from = $configuration_htcondor_flock_from
 
+        [[[configuration]]]
+        htcondor.pool_password = $configuration_htcondor_pool_password
+
         [[[cluster-init htcondor:default]]]
         Optional = true
 
@@ -97,13 +100,13 @@ Order = 10
         Label = Master VM Type
         Description = The VM type for scheduler master and shared filer.
         ParameterType = Cloud.MachineType
-        DefaultValue = Standard_D12_v2
+        DefaultValue = Standard_D2_v3
 
         [[[parameter ExecuteMachineType]]]
         Label = Execute VM Type
         Description = The VM type for execute nodes
         ParameterType = Cloud.MachineType
-        DefaultValue = Standard_F2s_v2
+        DefaultValue = Standard_D3_v2
         Config.Multiselect = true
 
 
@@ -161,7 +164,10 @@ Order = 20
 
         [[[parameter configuration_htcondor_flock_from]]]
         label = "Flock From"
-        defaultvalue = 13.80.177.197, 172.16.0.6
+        defaultvalue = 13.80.177.11, 172.16.0.1
+
+        [[[parameter configuration_htcondor_pool_password]]]
+        label = "Pool password"
 
     [[parameters Software]]
     Description = "Specify the scheduling software, and base OS installed on all nodes, and optionally the cluster-init and chef versions from your Locker."
@@ -171,12 +177,12 @@ Order = 20
         Label = Master Base OS
         ParameterType = Cloud.Image
         Config.OS = linux
-        DefaultValue = cycle.image.centos7
+        DefaultValue = cycle.image.ubuntu18
 
         [[[parameter ExecuteImageName]]]
         Label = Execute Base OS
         ParameterType = Cloud.Image
-        DefaultValue = cycle.image.centos7
+        DefaultValue = cycle.image.win2012
         Config.Filter := Package !== "cycle.image.win2016"
 
         [[[parameter MasterClusterInitSpecs]]]
