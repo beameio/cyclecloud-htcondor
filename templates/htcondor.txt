@@ -11,7 +11,7 @@ Autoscale = $Autoscale
 
     [[node defaults]]
     UsePublicNetwork = $UsePublicNetwork
-    Credentials = $Credentials    
+    Credentials = $Credentials
     SubnetId = $SubnetId
     Region = $Region
     KeyPairLocation = ~/.ssh/cyclecloud.pem
@@ -33,6 +33,7 @@ Autoscale = $Autoscale
     MachineType = $MasterMachineType
     IsReturnProxy = $ReturnProxy
     AdditionalClusterInitSpecs = $MasterClusterInitSpecs
+    Username = $Username
     
         [[[configuration]]]
 
@@ -161,6 +162,8 @@ Order = 20
         [[[parameter configuration_htcondor_pool_password]]]
         label = "Pool password"
         ParameterType = Password
+
+        [[[parameter Username]]]
 
     [[parameters Azure Settings]]
     Order = 10 
