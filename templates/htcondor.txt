@@ -33,7 +33,7 @@ Autoscale = $Autoscale
     MachineType = $MasterMachineType
     IsReturnProxy = $ReturnProxy
     AdditionalClusterInitSpecs = $MasterClusterInitSpecs
-    Username = $Username
+    Owner = $Username
     
         [[[configuration]]]
 
@@ -164,6 +164,7 @@ Order = 20
         ParameterType = Password
 
         [[[parameter Username]]]
+        ParameterType = hidden
 
     [[parameters Azure Settings]]
     Order = 10 
