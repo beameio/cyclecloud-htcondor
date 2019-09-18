@@ -147,19 +147,12 @@ Order = 10
 [parameters Advanced Settings]
 Order = 20
 
-    [[parameters Azure Settings]]
-    Order = 10 
-
-        [[[parameter Credentials]]]
-        Description = The credentials for the cloud provider
-        ParameterType = Cloud.Credentials
-
     [[parameters HTCondor Settings ]]
     Description = "Section for configuring HTCondor"
     Order = 5
 
         [[[parameter configuration_htcondor_version]]]
-        label = "HTCondor Version"
+        label = "Version"
         defaultvalue = 8.6.13
 
         [[[parameter configuration_htcondor_flock_from]]]
@@ -168,6 +161,13 @@ Order = 20
         [[[parameter configuration_htcondor_pool_password]]]
         label = "Pool password"
         ParameterType = Password
+
+    [[parameters Azure Settings]]
+    Order = 10 
+
+        [[[parameter Credentials]]]
+        Description = The credentials for the cloud provider
+        ParameterType = Cloud.Credentials
 
     [[parameters Software]]
     Description = "Specify the scheduling software, and base OS installed on all nodes, and optionally the cluster-init and chef versions from your Locker."
@@ -200,7 +200,7 @@ Order = 20
         [[[parameter Password]]]
         Label = Password
         ParameterType = Password
-        Description = The password for the built-in local user on all nodes for direct access.
+        Description = The password for the built-in local windows user. Needs to have complexity and at least 8 char in size.
         Conditions.Required := startswith("cycle.image.win", ExecuteImageName)
         Conditions.Excluded := !startswith("cycle.image.win", ExecuteImageName)
 
