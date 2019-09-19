@@ -2,7 +2,7 @@
 ################################
 ## Cluster Configuration File ##
 ################################
-[environment]
+[environment htcondor:master]
 Owner = $Username
 
 [cluster HTCondor-Flocking]
