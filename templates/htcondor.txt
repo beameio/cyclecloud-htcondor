@@ -6,7 +6,7 @@
 [cluster HTCondor-Flocking]
 FormLayout = selectionpanel
 Category = Schedulers
-Owner = $Username
+Owner = $Owner
 Autoscale = $Autoscale
 
     [[node defaults]]
@@ -154,6 +154,9 @@ Order = 20
         [[[parameter configuration_htcondor_version]]]
         label = "Version"
         defaultvalue = 8.6.13
+        
+        [[[parameter Owner]]]
+        label = "Owner"
 
         [[[parameter configuration_htcondor_flock_from]]]
         label = "Flock From"
@@ -161,9 +164,6 @@ Order = 20
         [[[parameter configuration_htcondor_pool_password]]]
         label = "Pool password"
         ParameterType = Password
-
-        [[[parameter Username]]]
-        ParameterType = hidden
 
     [[parameters Azure Settings]]
     Order = 10 
