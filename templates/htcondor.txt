@@ -2,11 +2,13 @@
 ################################
 ## Cluster Configuration File ##
 ################################
+[environment]
+Owner = $Username
 
 [cluster HTCondor-Flocking]
 FormLayout = selectionpanel
 Category = Schedulers
-
+Owner = $Username
 Autoscale = $Autoscale
 
     [[node defaults]]
@@ -33,11 +35,7 @@ Autoscale = $Autoscale
     MachineType = $MasterMachineType
     IsReturnProxy = $ReturnProxy
     AdditionalClusterInitSpecs = $MasterClusterInitSpecs
-    Owner = $Username
 
-        [[[environment]]]
-        Owner = $Username
-    
         [[[configuration]]]
 
         [[[cluster-init htcondor:master]]]
