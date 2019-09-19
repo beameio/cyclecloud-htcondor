@@ -2,8 +2,6 @@
 ################################
 ## Cluster Configuration File ##
 ################################
-[environment htcondor:master]
-Owner = $Username
 
 [cluster HTCondor-Flocking]
 FormLayout = selectionpanel
