@@ -25,7 +25,7 @@ Autoscale = $Autoscale
         [[[configuration]]]
         htcondor.pool_password = $configuration_htcondor_pool_password
 
-        [[[cluster-init htcondor:default]]]
+        [[[cluster-init htcondor-flocking:default]]]
         Optional = true
 
     [[node master]]
@@ -36,7 +36,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init htcondor:master]]]
+        [[[cluster-init htcondor-flocking:master]]]
 
         [[[network-interface eth0]]]
         AssociatePublicIpAddress = $UsePublicNetwork
@@ -58,7 +58,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init htcondor:execute]]]
+        [[[cluster-init htcondor-flocking:execute]]]
 
         [[[network-interface eth0]]]
         AssociatePublicIpAddress = $ExecuteNodesPublic
@@ -69,7 +69,7 @@ Order = 1
 
     [[parameters About HTCondor]]
 
-        [[[parameter htcondor]]]
+        [[[parameter htcondor-flocking]]]
         HideLabel = true
         Config.Plugin = pico.widget.HtmlTemplateWidget
         Config.Template = '''
