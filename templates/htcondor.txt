@@ -3,7 +3,7 @@
 ## Cluster Configuration File ##
 ################################
 
-[cluster HTCondor-Flocking]
+[cluster htcondor-flocking]
 FormLayout = selectionpanel
 Category = Schedulers
 Owner = $Owner
